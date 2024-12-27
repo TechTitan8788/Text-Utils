@@ -7,25 +7,30 @@ export default function TextForm(props) {
   const handelUpClick= () =>{
     let newText=Text.toUpperCase();
     setText(newText);
+    props.showAlert("success" ,"Text Converted To Uppercase");
   }
 
   const handelLoClick = () =>{
 let newText=Text.toLowerCase();
 setText(newText);
+props.showAlert("success" ,"Text Converted To Lowercase");
   }
 
   const handelClearClick = () =>{
     let newText=""
     setText(newText);
+    props.showAlert("success" ,"Text Cleared");
   }
 
   const handelOnChange= (event)=>{
     setText(event.target.value);
+    props.showAlert("success" ,"Remove Extra Spaces");
   }
  const handelCopy =()=>{
   let  text =document.getElementById("myBox");
  text.select();
  navigator.clipboard.writeText(text.value);
+ props.showAlert("success" ,"Text Copied to Clipboard !");
  }
  const handelExtraSpaces=()=>{
  let newText= Text.split(/[ ]+/);
@@ -40,11 +45,11 @@ setText(newText);
         <textarea className="form-control " value={Text} style={{backgroundColor:props.mode==='dark'? 'gray':'white' , color : props.mode==='dark'? 'white':'black'}} onChange={handelOnChange} id="myBox" rows="8"></textarea>
       </div>
 
-      <button className="btn btn-primary me-2"  onClick={handelUpClick} >Convert To Uppercase</button>
-      <button className='btn btn-primary mx-2'  onClick={handelLoClick} > Convert To Lowercase </button>
-      <button className="btn btn-primary mx-2" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
-      <button className=" btn btn-primary mx-2" onClick={handelClearClick}> Clear Text</button>
-      <button className="btn btn-primary mx-2" onClick={handelCopy}>Copy Text</button>
+      <button className="btn btn-danger me-2"  onClick={handelUpClick} >Convert To Uppercase</button>
+      <button className='btn btn-danger mx-2'  onClick={handelLoClick} > Convert To Lowercase </button>
+      <button className="btn btn-danger mx-2" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
+      <button className=" btn btn-danger mx-2" onClick={handelClearClick}> Clear Text</button>
+      <button className="btn btn-danger mx-2" onClick={handelCopy}>Copy Text</button>
      </div>
 
     <div className='cotainer my-3' style={{color:props.mode==='dark'? 'white':'black'}} >
