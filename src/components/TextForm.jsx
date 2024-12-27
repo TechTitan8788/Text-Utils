@@ -34,10 +34,10 @@ setText(newText);
   
   return (
     <>
-    <div className='container' >
+    <div className='container' style={{color:props.mode==='dark'? 'white':'black'}} >
       <h1>{props.heading}</h1>
       <div className="mb-3">
-        <textarea className="form-control " value={Text} onChange={handelOnChange}style={{ borderWidth: '8px' }} id="myBox" rows="8"></textarea>
+        <textarea className="form-control " value={Text} style={{backgroundColor:props.mode==='dark'? 'gray':'white' , color : props.mode==='dark'? 'white':'black'}} onChange={handelOnChange} id="myBox" rows="8"></textarea>
       </div>
 
       <button className="btn btn-primary me-2"  onClick={handelUpClick} >Convert To Uppercase</button>
@@ -47,12 +47,12 @@ setText(newText);
       <button className="btn btn-primary mx-2" onClick={handelCopy}>Copy Text</button>
      </div>
 
-    <div className='cotainer my-3' >
+    <div className='cotainer my-3' style={{color:props.mode==='dark'? 'white':'black'}} >
       <h2>Your Text Summary </h2>
       <p>{Text.split(" ").length -1} Words , {Text.length} Characters</p>
       <p>{0.008 * Text.split(" ").length}</p>
       <h2>Preview</h2>
-      <p>{Text}</p>
+      <p>{Text.length>0 ? Text :"Enter something in the text box above to preview it here"}</p>
     </div>
     </>
   );
