@@ -42,14 +42,14 @@ props.showAlert("success" ,"Text Converted To Lowercase");
     <div className='container' style={{color:props.mode==='dark'? 'white':'black'}} >
       <h1>{props.heading}</h1>
       <div className="mb-3">
-        <textarea className="form-control " value={Text} style={{backgroundColor:props.mode==='dark'? 'gray':'white' , color : props.mode==='dark'? 'white':'black'}} onChange={handelOnChange} id="myBox" rows="8"></textarea>
+        <textarea className="form-control container  border rounded-5 " value={Text} style={{backgroundColor:props.mode==='dark'? 'gray':'white' , color : props.mode==='dark'? 'white':'black'}} onChange={handelOnChange} id="myBox" rows="8"></textarea>
       </div>
 
-      <button className="btn btn-danger me-2"  onClick={handelUpClick} >Convert To Uppercase</button>
-      <button className='btn btn-danger mx-2'  onClick={handelLoClick} > Convert To Lowercase </button>
-      <button className="btn btn-danger mx-2" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
-      <button className=" btn btn-danger mx-2" onClick={handelClearClick}> Clear Text</button>
-      <button className="btn btn-danger mx-2" onClick={handelCopy}>Copy Text</button>
+      <button className="btn btn-warning me-2"  onClick={handelUpClick} >Convert To Uppercase</button>
+      <button className='btn btn-warning mx-2'  onClick={handelLoClick} > Convert To Lowercase </button>
+      <button className="btn btn-warning mx-2" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
+      <button className=" btn btn-warning mx-2" onClick={handelClearClick}> Clear Text</button>
+      <button className="btn btn-warning mx-2" onClick={handelCopy}>Copy Text</button>
      </div>
 
     <div className='cotainer my-3' style={{color:props.mode==='dark'? 'white':'black'}} >

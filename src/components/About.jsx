@@ -32,7 +32,7 @@ export default function About() {
   //   backgroundColor: 'black'
   //  }
   return (
-    <div className="container" style={myStyle}>
+    <div className="container  border rounded-5" style={myStyle}>
       <h1>About Us</h1>
 
       <div className="accordion" id="accordionExample">
@@ -119,15 +119,13 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-            <strong>Content : </strong>
-            
-               "TextUtils stands out because of its simplicity and
-              efficiency. It’s lightweight, fast, and packed with essential text
-              utilities, all in one place. With the added convenience of React
-              Router, you can easily navigate between features, and the
-              responsive design ensures seamless usage on any device. Perfect
-              for students, professionals, and anyone needing quick text
-              manipulation tools."
+              <strong>Content : </strong>
+              "TextUtils stands out because of its simplicity and efficiency.
+              It’s lightweight, fast, and packed with essential text utilities,
+              all in one place. With the added convenience of React Router, you
+              can easily navigate between features, and the responsive design
+              ensures seamless usage on any device. Perfect for students,
+              professionals, and anyone needing quick text manipulation tools."
             </div>
           </div>
         </div>

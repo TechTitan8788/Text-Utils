@@ -28,7 +28,7 @@ function App() {
       showAlert("success", "Dark mode has been enabled");
     } else {
       setMode("light");
-      document.body.style.backgroundColor = "white";
+      document.body.style.backgroundColor = "#FFEDF5";
       showAlert("success", "Light mode has been enabled");
     }
   };
@@ -48,7 +48,8 @@ function App() {
           <Routes>
             <Route exact path="/about" element={<About />} />
             <Route
-              exact path="/"
+              exact
+              path="/"
               element={
                 <TextForm
                   heading="Enter a Text To Analyze"
