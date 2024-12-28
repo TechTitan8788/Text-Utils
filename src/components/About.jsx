@@ -3,11 +3,11 @@ import { useState } from "react";
 
 export default function About() {
   const [myStyle, setMyStyle] = useState({
-    color: "white",
-    backgroundColor: "gray",
+    color: "black",
+    backgroundColor: "white",
   });
 
-  const [btnText, setBtnText] = useState("Enable Dark  Mode");
+  const [btnText, setBtnText] = useState("If you want to make it even darker, click here");
 
   let toggleStyle = () => {
     if (myStyle.color === "white") {
@@ -16,14 +16,14 @@ export default function About() {
         backgroundColor: "white",
       });
 
-      setBtnText("Enable Dark Mode");
+      setBtnText("If you want to make it even darker, click here");
     } else {
       setMyStyle({
         color: "white",
         backgroundColor: "gray",
         border: "1px dotted black",
       });
-      setBtnText("Enable Light Mode");
+      setBtnText("If you want to make it even lighter, click here");
     }
   };
 
