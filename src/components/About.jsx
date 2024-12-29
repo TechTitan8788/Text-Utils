@@ -1,36 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
-
-  const [btnText, setBtnText] = useState("If you want to make it even darker, click here");
-
-  let toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({
-        color: "gray",
-        backgroundColor: "white",
-      });
-
-      setBtnText("If you want to make it even darker, click here");
-    } else {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "gray",
-        border: "1px dotted black",
-      });
-      setBtnText("If you want to make it even lighter, click here");
-    }
+export default function About(props) {
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "black",
+    backgroundColor: props.mode === "dark" ? "gray" : "white"
   };
 
-  //   const myStyle={
-  //   color: 'white',
-  //   backgroundColor: 'black'
-  //  }
   return (
     <div className="container  border rounded-5" style={myStyle}>
       <h1>About Us</h1>
@@ -47,7 +23,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              1: About TextUtils
+              <strong>1: About TextUtils</strong>
             </button>
           </h2>
           <div
@@ -77,7 +53,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              2: Features
+              <strong>2: Features</strong>
             </button>
           </h2>
           <div
@@ -109,7 +85,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              3: Why Choose TextUtils?
+              <strong>3: Why Choose TextUtils?</strong>
             </button>
           </h2>
           <div
@@ -131,11 +107,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="container my-3">
-        <button type="button" onClick={toggleStyle} className="btn btn-primary">
-          {btnText}
-        </button>
-      </div>
+
     </div>
   );
 }
